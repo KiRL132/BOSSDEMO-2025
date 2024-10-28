@@ -8,7 +8,7 @@
 timedatectl status
 ```
 
-<img src="01.png" width='600'>
+![image](https://github.com/user-attachments/assets/847a8e41-9b6d-4d46-b757-71f77cd1a5de)
 
 Если отличается, то устанавливаем
 
