@@ -1,6 +1,7 @@
 # Настраиваем IP адреса
 
 ## ISP
+![image](https://github.com/user-attachments/assets/b0259a8a-ea1d-49f6-affa-ecb77fa117aa)
 
 ```
 configure
@@ -24,6 +25,9 @@ confirm
 ```
 
 ## HQ-RTR - EcoRouter
+
+![image](https://github.com/user-attachments/assets/41f3a149-47ce-4a0d-a522-d64a4996738d)
+
 
 Создаем сущность интерфейса и назначаем IP
 
@@ -95,6 +99,9 @@ ip route 0.0.0.0/0 172.16.4.1
 
 ## HQ-SRV
 
+![image](https://github.com/user-attachments/assets/c3d86f74-53fd-4b05-8f10-44821f38603a)
+
+
 ```
 TYPE=eth
 DISABLED=no
@@ -116,6 +123,9 @@ systemctl restart network
 ```
 
 ## BR-RTR
+
+![image](https://github.com/user-attachments/assets/46877a71-1f3d-4d39-8105-1c9f8018af42)
+
 
 ```
 configure
