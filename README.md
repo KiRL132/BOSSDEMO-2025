@@ -12,7 +12,7 @@
 | HQ-CLI | 3 | 2 | 15 | «ALT-workstatison» |
 
 > [!TIP]
-> ISP === НАСТРОЙКА [НАСТРОЙКА](./ALL_inst/vESR.md)
+> ISP === НАСТРОЙКА [НАСТРОЙКА](./ALL_inst/Eco.md)
 
 > [!TIP]
 > HQ-RTR === НАСТРОЙКА
