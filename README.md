@@ -11,9 +11,20 @@
 | BR-SRV | 2 | 1 | 10 | «ALT-server» |
 | HQ-CLI | 3 | 2 | 15 | «ALT-workstatison» |
 
-- [x] 1. ISP НАСТРОЙКА
-- [x] 2. HQ-RTR НАСТРОЙКА
-- [x] 3. BR-RTR НАСТРОЙКА
-- [x] 4. HQ-SRV НАСТРОЙКА
-- [x] 5. BR-SRV НАСТРОЙКА
-- [x] 6. HQ-CLI НАСТРОЙКА
+> [!TIP]
+> ISP === НАСТРОЙКА [НАСТРОЙКА](./ALL_INST/vESR.md)
+
+> [!TIP]
+> HQ-RTR === НАСТРОЙКА
+
+> [!TIP]
+> BR-RTR === НАСТРОЙКА
+
+> [!TIP]
+> HQ-SRV === НАСТРОЙКА
+
+> [!TIP]
+> BR-SRV === НАСТРОЙКА
+
+> [!TIP]
+> HQ-CLI === НАСТРОЙКА
