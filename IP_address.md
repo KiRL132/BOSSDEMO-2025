@@ -1,5 +1,9 @@
 # Настраиваем IP адреса
 
+## HQ-CLI
+![image](https://github.com/user-attachments/assets/0e732efa-0062-4799-9ed7-cd054f6537b4)
+
+
 ## ISP
 ![image](https://github.com/user-attachments/assets/b0259a8a-ea1d-49f6-affa-ecb77fa117aa)
 
@@ -156,6 +160,8 @@ confirm
 ```
 
 ## BR-SRV
+
+![image](https://github.com/user-attachments/assets/9ee2091c-1fd0-44ed-b4f2-7a8e7d9623f1)
 
 ```
 "TYPE=eth
