@@ -16,8 +16,8 @@ nano  /var/lib/bind/etc/options.conf
 
 Изменяем следующие параметры
 
-<img src="01.png" width='600'>
-<img src="02.png" width='600'>
+![image](https://github.com/user-attachments/assets/8a78926c-b7de-4a61-8f44-593b42341ad4)
+![image](https://github.com/user-attachments/assets/ebf23788-f13b-4f3a-a15c-c588d0c94bb8)
 
 Проверяем на ошибки
 
@@ -27,11 +27,12 @@ named-checkconf
 
 Если появилась вот такая ошибка:
 
-<img src="03.png" width='600'>
+![image](https://github.com/user-attachments/assets/36a79d9e-7a2f-4c9d-88c7-8734587e2a40)
  
 Нужно скофигураровать ключи с помощью `rndc-confgen`
 
-<img src="04.png" width='600'>
+![image](https://github.com/user-attachments/assets/7147ebc4-6639-4b67-8947-60acc885f618)
+
 
 Редактируем файл `var/lib/bind/etc/rndc.key `
 ```
@@ -40,7 +41,7 @@ nano /var/lib/bind/etc/rndc.key
 
 Встравляем в него ключ, который получили при помощи `rndc-confgen`
 
-<img src="05.png" width='600'>
+![image](https://github.com/user-attachments/assets/02c7a31d-44d3-49f7-92f2-43427a1cafe6)
 
 Проверяем на ошибки
 
@@ -52,14 +53,9 @@ named-checkconf
 
 ```
 systemctl enable --now bind
-```
-Проверяем что `bind` работает
-
-```
 systemctl status bind
 ```
 
-<img src="06.png" width='600'>
 
 Редактируем `resolv.conf`
 
@@ -78,30 +74,29 @@ nameserver 77.88.8.8
 
 ```
 systemctl restart network
-```
-
-Проверяем
-
-```
 dig ya.ru
 ```
 
-<img src="07.png" width='600'>
+![image](https://github.com/user-attachments/assets/43bdd4a0-2473-4419-8e14-246ca81a5a11)
 
 ### Создаем зону прямого просмотра
 
 ```
 nano  /var/lib/bind/etc/local.conf
-```
 
-```
 zone "au-team.irpo" {
         type master;
         file "au-team.irpo.db";
 };
+
+zone "0.168.192.in-addr.arpa" {
+        type master;
+        file "au-team.irpo_rev.db";
+};
 ```
 
-<img src="08.png" width='600'>
+![image](https://github.com/user-attachments/assets/225eb54f-5674-4757-81c2-6faf1901433d)
+
 
 Создаем копию файла-шаблона прямой зоны `/var/lib/bind/etc/zone/localdomain`
 
@@ -148,7 +143,7 @@ wiki    IN      CNAME   hq-rtr
 named-checkconf -z
 ```
 
-<img src="09.png" width='600'>
+![image](https://github.com/user-attachments/assets/dc7ae525-b388-4996-aded-bf9e398eb85b)
 
 Перезагружаем `bind`
 
@@ -162,22 +157,10 @@ systemctl restart bind
 dig hq-srv.au-team.irpo
 ```
 
-<img src="10.png" width='600'>
+![image](https://github.com/user-attachments/assets/ae64ef3e-cceb-4b4f-8706-e849cebb4d4c)
+
 
 ### Создаем зону обратного просмотра и PTR записи
-
-```
-nano  /var/lib/bind/etc/local.conf
-```
-
-```
-zone "0.168.192.in-addr.arpa" {
-        type master;
-        file "au-team.irpo_rev.db";
-};
-```
-
-<img src="11.png" width='600'>
 
 Копируем шаблон файла
 
@@ -221,7 +204,8 @@ $TTL    1D
 named-checkconf -z
 ```
 
-<img src="12.png" width='600'>
+![image](https://github.com/user-attachments/assets/f90d0e2e-3652-4d83-912d-e6e222a1e6bb)
+
 
 Перезагружаем `bind`
 
@@ -235,8 +219,10 @@ systemctl restart bind
 dig -x 192.168.0.2
 ```
 
-<img src="13.png" width='600'>
+![image](https://github.com/user-attachments/assets/60291e24-f8c2-4113-9162-a5168ec9dc6a)
+
 
 ### Комплекская проверка с HQ-CLI
 
-<img src="14.png" width='600'>
+![image](https://github.com/user-attachments/assets/4ed43108-dbc8-484e-8dc3-85eb39280113)
+
