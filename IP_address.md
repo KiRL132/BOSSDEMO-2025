@@ -1,6 +1,6 @@
 # Настраиваем IP адреса
 
-## Serial Port
+## Serial Port & Mac address
 
 1. Добавляем новое устройство нажав на `Add other device`
 2. Выбираем пункт `Serial port`
@@ -8,6 +8,10 @@
 4. В строку `Port URL` добавляем значение в формате `telnet://0.0.0.0:<port>`. Номер порта для каждой виртуальной машины должен быть уникальным
 5. Сохраняем изменения нажав кнопку `SAVE`
 6. Включаем виртуальную машину.
+
+Mac-address
+1. vESR = **show interface status**
+2. Eco = **show interface**
 
 ## HQ-CLI
 ![image](https://github.com/user-attachments/assets/0e732efa-0062-4799-9ed7-cd054f6537b4)
