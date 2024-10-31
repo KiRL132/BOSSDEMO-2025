@@ -22,6 +22,14 @@ Banner /etc/openssh/banner
 AllowUsers sshuser
 ```
 
+Чтобы зайти через PUTTY нужно ввести команды на обоих машинах Linux
+
+```
+systemctl start serial-getty@ttyS0.service
+systemctl enable serial-getty@ttyS0.service
+systemctl status serial-getty@ttyS0.service
+```
+
 Создаем файл с баннером
 
 ```
