@@ -88,11 +88,6 @@ zone "au-team.irpo" {
         type master;
         file "au-team.irpo.db";
 };
-
-zone "0.168.192.in-addr.arpa" {
-        type master;
-        file "au-team.irpo_rev.db";
-};
 ```
 
 ![image](https://github.com/user-attachments/assets/225eb54f-5674-4757-81c2-6faf1901433d)
@@ -161,6 +156,17 @@ dig hq-srv.au-team.irpo
 
 
 ### Создаем зону обратного просмотра и PTR записи
+
+```
+nano  /var/lib/bind/etc/local.conf
+```
+
+```
+zone "0.168.192.in-addr.arpa" {
+        type master;
+        file "au-team.irpo_rev.db";
+};
+```
 
 Копируем шаблон файла
 
