@@ -16,6 +16,11 @@ nano  /var/lib/bind/etc/options.conf
 
 Изменяем следующие параметры
 
+```
+В этом файле указываем изначальную сеть. Пример: дали нам 10.0.0.0/23, разбили себе её на 10.0.0.0/24 и 10.0.1.0/24
+Пишем их вместо 2 и 3 адресов. По идее если дали сеть 192.168.0.0/24 то пишем только её и все, получится всего 2 сети. Лайфхак: если не поняли - молитесь и креститесь 
+```
+
 ![image](https://github.com/user-attachments/assets/8a78926c-b7de-4a61-8f44-593b42341ad4)
 ![image](https://github.com/user-attachments/assets/ebf23788-f13b-4f3a-a15c-c588d0c94bb8)
 
@@ -66,7 +71,7 @@ nano /etc/net/ifaces/ens192/resolv.conf
 ```
 search au-team.irpo
 nameserver 127.0.0.1
-nameserver 192.168.0.2
+nameserver 192.168.0.2 [Адрес HQ-SRV]
 nameserver 77.88.8.8
 ```
 
@@ -122,7 +127,7 @@ $TTL    1D
                                 1H              ; ncache
                         )
         IN      NS      au-team.irpo.
-        IN      A       192.168.0.2
+        IN      A       192.168.0.2 [Адрес HQ-SRV, а дальше по названию машин понятно какие адреса сувать. Андрей осел кста]
 hq-rtr  IN      A       192.168.0.1
 br-rtr  IN      A       192.168.1.1
 hq-srv  IN      A       192.168.0.2
@@ -222,7 +227,7 @@ systemctl restart bind
 Проверяем
 
 ```
-dig -x 192.168.0.2
+dig -x 192.168.0.2 [Адрес HQ-SRV]
 ```
 
 ![image](https://github.com/user-attachments/assets/60291e24-f8c2-4113-9162-a5168ec9dc6a)
