@@ -35,7 +35,7 @@ interface HQ-CLI
 interface HQ-MGMT
  ip nat inside
 !
-ip nat pool NAT_POOL 192.168.0.1-192.168.0.254
+ip nat pool NAT_POOL 192.168.0.1-192.168.0.254 [Пишем пул адресов подсети HQ-SRV. Т.е пишем адрес vlan100 и через тире адрес vlan999 ]
 !
 ip nat source dynamic inside-to-outside pool NAT_POOL overload interface TO-ISP
 !
@@ -46,7 +46,7 @@ ping 8.8.8.8
 
 ```
 object-group network LOCAL_NET
-  ip address-range 192.168.1.1-192.168.1.30
+  ip address-range 192.168.1.1-192.168.1.30 [Пишем пул адресов подсети BR-SRV. Т.е пишем пул который получился для 32 адресов ]
 exit
 
 nat source
