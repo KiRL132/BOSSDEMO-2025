@@ -68,15 +68,15 @@ connect ip interface TO-ISP
 ```
 interface HQ-SRV
  ip mtu 1500
- ip address 192.168.0.1/26
+ ip address 192.168.0.1/26 [Тут пишем адрес, который вы рассчитали для своей подсети. В таблице этот адрес в HQ-RTR - ge1.100]
 !
 interface HQ-CLI
  ip mtu 1500
- ip address 192.168.0.65/28
+ ip address 192.168.0.65/28 [Тут пишем адрес, который вы рассчитали для своей подсети. в таблице этот адрес в HQ-RTR - ge1.200]
 !
 interface HQ-MGMT
  ip mtu 1500
- ip address 192.168.0.81/29
+ ip address 192.168.0.81/29 [Тут пишем адрес, который вы рассчитали для своей подсети. в таблице этот адрес в HQ-RTR - ge1.999]
 !
 ```
 
@@ -128,11 +128,11 @@ CONFIG_IPv4=yes" > /etc/net/ifaces/ens192/options
 ```
 
 ```
-192.168.0.2/26 > /etc/net/ifaces/ens192/ipv4address
+192.168.0.2/26 > /etc/net/ifaces/ens192/ipv4address [Тут пишем адрес, который вы рассчитали для своей подсети. в таблице этот адрес в HQ-SRV - ens192]
 ```
 
 ```
-default via 192.168.0.1 > /etc/net/ifaces/ens192/ipv4route
+default via 192.168.0.1 > /etc/net/ifaces/ens192/ipv4route [Тут пишем адрес, который вы рассчитали для своей подсети. В таблице этот адрес в HQ-RTR - ge1.100]
 ```
 
 ```
@@ -154,7 +154,7 @@ interface gigabitethernet 1/0/1
 exit
 interface gigabitethernet 1/0/2
   ip firewall disable
-  ip address 192.168.1.1/27
+  ip address 192.168.1.1/27 [Тут пишем адрес, который вы рассчитали для своей подсети. В таблице этот адрес в BR-RTR - gi1/0/2]
   no shutdown
 exit
 tunnel gre 1
@@ -185,15 +185,15 @@ CONFIG_IPv4=yes" > /etc/net/ifaces/ens192/options
 ```
 
 ```
-192.168.1.2/26 > /etc/net/ifaces/ens192/ipv4address
+192.168.1.2/26 > /etc/net/ifaces/ens192/ipv4address [Тут пишем адрес, который вы рассчитали для своей подсети. В таблице этот адрес в BR-SRV - ens192]
 ```
 
 ```
-default via 192.168.1.1 > /etc/net/ifaces/ens192/ipv4route
+default via 192.168.1.1 > /etc/net/ifaces/ens192/ipv4route [Тут пишем адрес, который вы рассчитали для своей подсети. В таблице этот адрес в BR-RTR - gi1/0/2]
 ```
 
 ```
-nameserver 192.168.0.2 > /etc/net/ifaces/ens192/resolv.conf
+nameserver 192.168.0.2 > /etc/net/ifaces/ens192/resolv.conf 
 nameserver 192.168.0.2 > /etc/resolv.conf
 ```
 
